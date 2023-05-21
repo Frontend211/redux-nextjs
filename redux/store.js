@@ -1,8 +1,13 @@
 import { createStore } from 'redux';
-import {INCREMENT,DECREMENT} from './actions.js';
+
+// import {createWrapper, HYDRATE} from 'next-redux-wrapper';
+import { INCREMENT, DECREMENT } from './actions.js';
+
 
 function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
+    // case HYDRATE:
+    //   return {...state, ...action.payload};
     case INCREMENT:
       return { value: state.value + 1 };
     case DECREMENT:
@@ -12,7 +17,10 @@ function counterReducer(state = { value: 0 }, action) {
   }
 }
 
-
 export const store = createStore(counterReducer);
-console.log('store=',store);
-console.log('state=', store.getState());
+
+// // create a makeStore function
+// const makeStore = context => createStore(reducer);
+
+// // export an assembled wrapper
+// export const wrapper = createWrapper(makeStore, {debug: true});

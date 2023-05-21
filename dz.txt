@@ -1,0 +1,2 @@
+Запустить код счетчика (с применением Redux и React Redux) на Create React App
+https://github.com/Frontend211/redux-nextjs
